@@ -15,4 +15,7 @@ Gem::Specification.new do |gem|
   gem.executables      = %w[triage]
   gem.test_files       = `git ls-files -- spec`.split($/)
   gem.extra_rdoc_files = %w[README.md TODO]
+
+  # development
+  gem.add_development_dependency 'triage-deps',  '~> 0.0.2'
 end
