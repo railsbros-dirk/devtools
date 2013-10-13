@@ -6,17 +6,17 @@ require 'timeout'
 require 'yaml'
 require 'fileutils'
 
-require 'devtools/platform'
-require 'devtools/site'
-require 'devtools/site/initializer'
-require 'devtools/project'
-require 'devtools/config'
-require 'devtools/project/initializer'
-require 'devtools/project/initializer/rake'
-require 'devtools/project/initializer/rspec'
+require 'triage/platform'
+require 'triage/site'
+require 'triage/site/initializer'
+require 'triage/project'
+require 'triage/config'
+require 'triage/project/initializer'
+require 'triage/project/initializer/rake'
+require 'triage/project/initializer/rspec'
 
 # Provides access to metric tools
-module Devtools
+module Triage
 
   extend Platform
 
@@ -32,17 +32,17 @@ module Devtools
   RB_FILE_PATTERN         = '**/*.rb'.freeze
   RAKE_FILE_NAME          = 'Rakefile'.freeze
   DEFAULT_GEMFILE_NAME    = 'Gemfile'.freeze
-  GEMFILE_NAME            = 'Gemfile.devtools'.freeze
+  GEMFILE_NAME            = 'Gemfile.triage'.freeze
   EVAL_GEMFILE            = "eval_gemfile '#{GEMFILE_NAME}'".freeze
   BUNDLE_UPDATE           = 'bundle update'.freeze
-  REQUIRE                 = "require 'devtools'".freeze
-  INIT_RAKE_TASKS         = 'Devtools.init_rake_tasks'.freeze
+  REQUIRE                 = "require 'triage'".freeze
+  INIT_RAKE_TASKS         = 'Triage.init_rake_tasks'.freeze
   SHARED_SPEC_PATTERN     = '{shared,support}/**/*.rb'.freeze
   UNIT_TEST_PATH_REGEXP   = %r{\bspec/unit/}.freeze
   DEFAULT_CONFIG_DIR_NAME = 'config'.freeze
-  ANNOTATION_WRAPPER      = "\n# Added by devtools\n%s".freeze
+  ANNOTATION_WRAPPER      = "\n# Added by triage\n%s".freeze
 
-  # Provides devtools for a project
+  # Provides triage for a project
   SITE = Site.new(Project.new(PROJECT_ROOT))
 
   # Initialize project and load tasks
@@ -69,7 +69,7 @@ module Devtools
     self
   end
 
-  # Initialize devtools using default config
+  # Initialize triage using default config
   #
   # @return [undefined]
   #
@@ -79,7 +79,7 @@ module Devtools
     self
   end
 
-  # Sync Gemfile.devtools
+  # Sync Gemfile.triage
   #
   # @return [undefined]
   #
@@ -88,7 +88,7 @@ module Devtools
     SITE.sync
   end
 
-  # Sync Gemfile.devtools and run bundle update
+  # Sync Gemfile.triage and run bundle update
   #
   # @return [undefined]
   #
@@ -148,7 +148,7 @@ module Devtools
   #
   # @api private
   def self.fail_on_branch
-    project.devtools.fail_on_branch
+    project.triage.fail_on_branch
   end
 
   # Return current git branch
@@ -161,4 +161,4 @@ module Devtools
   end
   private_class_method :current_branch
 
-end # module Devtools
+end # module Triage

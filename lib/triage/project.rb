@@ -1,8 +1,8 @@
 # encoding: utf-8
 
-module Devtools
+module Triage
 
-  # The project devtools supports
+  # The project triage supports
   class Project
 
     # The reek configuration
@@ -47,12 +47,12 @@ module Devtools
     # @api private
     attr_reader :mutant
 
-    # The devtools configuration
+    # The triage configuration
     #
-    # @return [Config::Devtools]
+    # @return [Config::Triage]
     #
     # @api private
-    attr_reader :devtools
+    attr_reader :triage
 
     # Return project root
     #
@@ -135,10 +135,10 @@ module Devtools
       @yardstick = Config::Yardstick.new(self)
       @flay      = Config::Flay.new(self)
       @mutant    = Config::Mutant.new(self)
-      @devtools  = Config::Devtools.new(self)
+      @triage    = Config::Triage.new(self)
 
-      @unit_test_timeout = @devtools.unit_test_timeout
+      @unit_test_timeout = @triage.unit_test_timeout
     end
 
   end # class Project
-end # module Devtools
+end # module Triage

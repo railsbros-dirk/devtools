@@ -5,14 +5,14 @@ require 'bundler'
 
 Bundler.setup
 
-require 'devtools'
+require 'triage'
 
 command = ARGV.first
 
 case command
-when 'init'   then Devtools.init
-when 'sync'   then Devtools.sync
-when 'update' then Devtools.update
+when 'init'   then Triage.init
+when 'sync'   then Triage.sync
+when 'update' then Triage.update
 else
   puts 'command not supported'
 end

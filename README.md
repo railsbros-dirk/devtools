@@ -1,9 +1,9 @@
-# devtools
+# triage
 
-[![Build Status](https://secure.travis-ci.org/rom-rb/devtools.png?branch=master)](http://travis-ci.org/rom-rb/devtools)
-[![Dependency Status](https://gemnasium.com/rom-rb/devtools.png)](https://gemnasium.com/rom-rb/devtools)
-[![Code Climate](https://codeclimate.com/github/datamapper/devtools.png)](https://codeclimate.com/github/datamapper/devtools)
-<!-- [![Code Climate](https://codeclimate.com/github/rom-rb/devtools.png)](https://codeclimate.com/github/rom-rb/devtools) -->
+[![Build Status](https://secure.travis-ci.org/rom-rb/triage.png?branch=master)](http://travis-ci.org/rom-rb/triage)
+[![Dependency Status](https://gemnasium.com/rom-rb/triage.png)](https://gemnasium.com/rom-rb/triage)
+[![Code Climate](https://codeclimate.com/github/datamapper/triage.png)](https://codeclimate.com/github/datamapper/triage)
+<!-- [![Code Climate](https://codeclimate.com/github/rom-rb/triage.png)](https://codeclimate.com/github/rom-rb/triage) -->
 
 Metagem to assist [ROM](https://github.com/rom-rb)-style development.
 Used to centralize metric setup and development gem dependencies.
@@ -18,15 +18,15 @@ Add the git source to your Gemfile's development section:
 
 ```ruby
 group :development, :test do
-  gem 'devtools', git: 'https://github.com/rom-rb/devtools.git'
+  gem 'triage', git: 'https://github.com/rom-rb/triage.git'
 end
 ```
 
-To initialize devtools in a project run the following command:
+To initialize triage in a project run the following command:
 
 ```ruby
 bundle install
-bundle exec devtools init
+bundle exec triage init
 ```
 
 This will *change your Gemfile and Rakefile* and add config files. Make sure to
@@ -34,11 +34,11 @@ review the diff and don't freak out :wink:
 
 ## Updating
 
-Later on if you want to update to the latest devtools just run:
+Later on if you want to update to the latest triage just run:
 
 ```
-bundle update devtools
-bundle exec devtools sync
+bundle update triage
+bundle exec triage sync
 bundle install
 ```
 
@@ -48,7 +48,7 @@ If you're using RSpec and want to have access to our common setup just adjust
 `spec/spec_helper.rb` to include
 
 ```ruby
-require 'devtools/spec_helper'
+require 'triage/spec_helper'
 ```
 
 ## Credits

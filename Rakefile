@@ -1,5 +1,5 @@
-require 'devtools'
+require 'triage'
 
 ENV['DEVTOOLS_SELF'] = '1'
 
-Devtools.init_rake_tasks
+Triage.init_rake_tasks

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
-module Devtools
-  MASTER_BRANCH           = 'master'.freeze
+module Triage
+  MASTER_BRANCH = 'master'.freeze
 
   # Abstract base class of tool configuration
   class Config
@@ -96,12 +96,12 @@ module Devtools
     # Rubocop configuration
     class Rubocop < self
       FILE = 'rubocop.yml'.freeze
-    end
+    end # Rubocop
 
     # Reek configuration
     class Reek < self
       FILE = 'reek.yml'.freeze
-    end
+    end # Reek
 
     # Flay configuration
     class Flay < self
@@ -109,7 +109,7 @@ module Devtools
 
       attribute :total_score
       attribute :threshold
-    end
+    end # Flay
 
     # Yardstick configuration
     class Yardstick < self
@@ -132,7 +132,7 @@ module Devtools
           hash[name] = raw.fetch(name, nil)
         }
       end
-    end
+    end # Yardstick
 
     # Flog configuration
     class Flog < self
@@ -140,7 +140,7 @@ module Devtools
 
       attribute :total_score
       attribute :threshold
-    end
+    end # Flog
 
     # Mutant configuration
     class Mutant < self
@@ -151,16 +151,17 @@ module Devtools
       attribute :name, DEFAULT_NAME
       attribute :namespace
       attribute :strategy, DEFAULT_STRATEGY
-    end
+    end # Mutant
 
-    # Devtools configuration
-    class Devtools < self
-      FILE = 'devtools.yml'.freeze
+    # Triage configuration
+    class Triage < self
+      FILE = 'triage.yml'.freeze
       DEFAULT_UNIT_TEST_TIMEOUT = 0.1  # 100ms
       DEFAULT_BRANCHES_TO_FAIL_ON = [MASTER_BRANCH]
 
       attribute :unit_test_timeout, DEFAULT_UNIT_TEST_TIMEOUT
       attribute :fail_on_branch, DEFAULT_BRANCHES_TO_FAIL_ON
-    end
-  end
-end
+    end # Triage
+
+  end # Config
+end # Triage
