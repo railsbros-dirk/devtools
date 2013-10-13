@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
-gemspec
+gemspec :name => 'triage'
+gemspec :name => 'triage-deps'
 
 eval_gemfile 'shared/Gemfile'
