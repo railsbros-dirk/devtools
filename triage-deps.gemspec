@@ -39,7 +39,7 @@ Gem::Specification.new do |gem|
   # metrics
   gem.add_development_dependency 'coveralls', '~> 0.7.0'
   gem.add_development_dependency 'flay',      '~> 2.4.0'
-  gem.add_development_dependency 'flog',      '~> 4.1.1'
+  gem.add_development_dependency 'flog',      '~> 4.2.0'
   gem.add_development_dependency 'reek',      '~> 1.3.2'
   gem.add_development_dependency 'rubocop',   '~> 0.14.1'
   gem.add_development_dependency 'simplecov', '~> 0.7.1'
